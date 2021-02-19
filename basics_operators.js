@@ -142,7 +142,7 @@ console.log(true == 1); // true.
 ///Ternary or conditional operator
 
 let points = 110;
-let type = points > 100 ? 'gold' : 'silver';
+let type = points > 100 ? 'gold' : 'silver'; ////////////////////////////////////////
 // Tu es piroba points > 100 sworia mashin abrunebs golds Tu ara silvers
 console.log(type);
 
