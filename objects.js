@@ -12,7 +12,7 @@
 
 // circle.draw();
 
-//fuctory Functions ////////////////////////////////////////////////////////////////////////////////////////////////
+//factory Functions ////////////////////////////////////////////////////////////////////////////////////////////////
 
 function createCircle(radius) {
     return {
@@ -159,4 +159,80 @@ console.log(objString.split(' '));
 // Object is literalia {}
 // boolean ------- true, false
 // Srting  --------'',""
-// template --------``
+// template --------``  es6 dan
+
+let another8 = `This is my 
+Second message
+madloba`;
+// `` gamoyenebiT shegiZlia daaformato texti zedmeti nishnebis gareshe
+//asvene shegidzlia daamatp placeholderebi dinamiurad, aseve funqcia shegvidzlia gamovidzaxoT ${ } amit
+const name1 = 'Bach'
+another8 = `This is my ${name1}
+Second message ${2 + 5}
+madloba`;
+
+console.log(another8);
+
+
+/////////// Date Object //////////////////////////////////////////
+
+const now = new Date();
+const date1 = new Date(2018,0,24,9,0 );
+
+console.log(date1,now);
+let dateTmp = now.getDay(now);
+console.log(dateTmp,now);
+dateTmp = now.setDate(22);
+console.log(dateTmp,
+            now.toDateString(),
+            now.toTimeString(),
+            now.toISOString()   // backandtan es gamoiyeneba
+            );
+
+
+////// savarjishoebi ///////////////////////////////
+
+
+// Factory function
+function createAddress(street, city, zipCode) {
+  return {
+    street: street,
+    city,
+    zipCode
+  };
+
+}
+let address = createAddress('aa','b','c');
+console.log (address);
+
+// constractor function. paskal notation
+function Address(street, city, zipCode) {
+  this.street = street;
+  this.city = city;
+  this.zipCode = zipCode;
+}
+
+let address2 = new Address('aa','b','c');
+console.log (address2);
+
+
+let address3 = new Address('aa','b','c');
+
+//or obieqts rom adareb === addres is smgavs mashin dardeba referance type da ara obietqis propertebi. 
+//amitom calke funqcias vwert propertebis shesadareblad
+function areEqual(address2,address3) {
+  return address2.street === address3.street &&
+     address2.city === address3.city &&
+     address2.zipCode === address3.zipCode;
+}
+
+// check address2 and 3 are pointing to exact same object 
+function areSame(address2,address3) {
+  return address2 === address3;
+}
+
+let address4 = address2;
+
+console.log (areEqual(address2,address3));
+console.log (areSame(address2,address3)); 
+console.log (areSame(address2,address4)); 
