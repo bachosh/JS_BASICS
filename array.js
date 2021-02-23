@@ -112,3 +112,119 @@ console.log(slice2);
 
 combArray3 = [...objArray, ...secondArray ,'ku']; 
 console.log(combArray3);
+
+//// Iteraring Array
+const arrNumbers = [1,2,3,4,5,'arrNumbers'];
+
+arrNumbers.forEach(function(number) {
+    console.log(number);
+}); /// am funqciashi array yovel elementze eshveba function( number) sadac number i aris arrays shesabamisi elementi
+// igive arrow function it
+arrNumbers.forEach((number) => console.log(number) );
+arrNumbers.forEach((number,index) => console.log(index,number) );
+
+const jointArray = arrNumbers.join(',');
+console.log(jointArray);
+console.log(jointArray.split(','));
+
+// sort arrays
+
+console.log(arrNumbers.sort());
+console.log(arrNumbers.reverse());
+
+// ASCII Table and Description  shi weria yvela charaqteris cifruli  indexqsi, da magis mixedvit sortirdeba stringi
+
+const coursesSort = [
+    {id: 1, name: 'Node.js'},
+    {id: 2, name: 'javaScript'},
+]
+
+coursesSort.sort(function(a,b){
+
+    const nameA = a.name.toUpperCase();
+    const nameB = b.name.toUpperCase();
+
+    if (nameA < nameB) return -1;
+    if (nameA > nameB) return 1;
+    return 0;
+} );
+
+console.log(coursesSort);
+
+// testing the Elements of an Array
+// vamowmebt yvela dadebitia tu ara every funqciist
+const arrNumbers2 = [1,2,3,-4,5];
+
+const allPositive = arrNumbers2.every(function(value) {
+return value >= 0;
+}
+)
+
+console.log(allPositive);
+
+// erti mainc tua dadebiti . viyenebt some methods
+const allPositive2 = arrNumbers2.some(function(value) {
+    return value >= 0;
+    }
+    )
+    
+    console.log(allPositive2);
+
+// filtering an array
+
+let filteredArray = arrNumbers2.filter(function(value) {
+    return value >= 0;
+    }
+    )
+    
+    console.log(filteredArray);
+
+//igivea
+filteredArray = arrNumbers2.filter((value) => { value >= 0});
+filteredArray = arrNumbers2.filter(value =>  value >= 0);
+
+/// map method
+
+const itemsArray = filteredArray.map( n => '<li>' + n + '</li>');
+
+console.log(itemsArray);
+
+const htmlArray = '<ul>' + itemsArray.join('') + '</ul>';
+
+console.log(htmlArray);
+
+/// 2 gza
+const itemsArray2 = filteredArray.map( n =>  {
+    // const obj1 = { value: n};
+    // return obj1;
+     return { value: n}; // igivea rac zevit
+});
+//ufro mokle versia () vamatebt
+const itemsArray3 = filteredArray.map( n =>  ({ value: n }) );
+
+console.log(itemsArray2);
+console.log(itemsArray3);
+
+// orive filter da map methodebi abrneben axal arrays
+
+
+const itemsArray4 = arrNumbers2
+       .filter(n =>  n >= 0)
+       .map(n => ({value: n}))
+       .filter(obj =>  obj.value > 1)
+       .map(obj => obj.value * 5)
+
+console.log(itemsArray4);
+
+
+const number5 = [1,2,3,-4,5];
+// reduce metod .  ert elementad shekreba. stringis da numberis.
+
+
+let var1 = number5.reduce(
+ (accumulator,currentValue) => {return accumulator + currentValue;},  //pirveli argumenti callback function
+ 8  //meore argumenti sawyisi mnishvneloba. tu ar gauwer amas array s pirvel elements airebs sawyiss mnishvnelobad
+);
+
+console.log(var1);
+console.error('my error');
