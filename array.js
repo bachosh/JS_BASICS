@@ -228,3 +228,8 @@ let var1 = number5.reduce(
 
 console.log(var1);
 console.error('my error');
+
+
+//////////////////////////////////////////////////////////////////////
+
+// Array.isArray([]) arrays shemowmeba
